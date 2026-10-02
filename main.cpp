@@ -1,24 +1,43 @@
-// Práctica 5: El mayor de tres números
-// Traduce TU receta de RECETA.md a C++, paso por paso.
-// Deja el comentario "// Paso N" sobre cada bloque, con la numeración de TU receta.
-
-// ¿Recuerdas qué hace iostream?
 #include <iostream>
-
-// ¿Qué función de utilerias.h vas a usar? ¿Por qué esa y no la otra?
-#include "utilerias.h"
+using namespace std;
 
 int main() {
-    // Variables (siempre inicializadas)
-    // TODO: ¿cuántas necesitas? ¿De qué tipo? ¿Necesitas alguna además de los tres números?
+    double a, b, c, mayor;
 
-    // Paso 1: mensaje de bienvenida
-    // TODO
+    cout << "Programa para encontrar el numero mayor\n\n";
 
-    // TODO: el resto de tu receta, paso por paso.
-    //       ¿Tu decisión necesita una cadena if / else if / else o varios if independientes?
-    //       ¿Qué pasa con tu código si dos números son iguales?
+    cout << "Ingresa el primer numero: ";
+    cin >> a;
 
-    // ¿Qué significa return 0;?
+    cout << "Ingresa el segundo numero: ";
+    cin >> b;
+
+    cout << "Ingresa el tercer numero: ";
+    cin >> c;
+
+    if (a > b && a > c) {
+        mayor = a;
+    }
+    else if (b > a && b > c) {
+        mayor = b;
+    }
+    else if (c > a && c > b) {
+        mayor = c;
+    }
+    else {
+        // Hay un empate, asi que usamos >=
+        if (a >= b && a >= c) {
+            mayor = a;
+        }
+        else if (b >= a && b >= c) {
+            mayor = b;
+        }
+        else {
+            mayor = c;
+        }
+    }
+
+    cout << "\nEl numero mayor es: " << mayor << endl;
+
     return 0;
 }
